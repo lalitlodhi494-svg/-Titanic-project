@@ -16,3 +16,8 @@ for pclass in sorted(df['Pclass'].unique()):
     print(f"Class {pclass}: {survival_rate:.2f}%")
 print("Number of passengers by gender:")
 print(df['Sex'].value_counts())
+print("Survival rate by gender:")
+for gender in df['Sex'].unique():
+    survival_rate = df  [df['Sex'] ==   gender]['Survived'].mean() * 100
+    print(f"{gender.capitalize()}: {survival_rate:.2f}%")                   
+    
