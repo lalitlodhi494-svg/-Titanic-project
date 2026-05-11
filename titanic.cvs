@@ -6,11 +6,11 @@ print("Total passengers:", len(df))
 print("Survived passengers:", df['Survived'].sum())
 print("Survival rate:", df['Survived'].mean() * 100, "%")
 print("Average age of passengers:", df['Age'].mean())
-print("Average age of survivors:", df[df['Survived'] == 1]['Age '].mean())
-print("Average age of non-survivors:", df[df['Survived'] == 0]['Age '].mean())
-print("Number of passengers by class:") 
+print("Average age of survivors:", df[df['Survived'] == 1]['Age'].mean())
+print("Average age of non-survivors:", df[df['Survived'] == 0]['Age'].mean())
+print("Number of passengers by class:")
 print(df['Pclass'].value_counts())
-print("Survival rate by class:")    
+print("Survival rate by class:")
 for pclass in sorted(df['Pclass'].unique()):
     survival_rate = df[df['Pclass'] == pclass]['Survived'].mean() * 100
     print(f"Class {pclass}: {survival_rate:.2f}%")
@@ -18,6 +18,6 @@ print("Number of passengers by gender:")
 print(df['Sex'].value_counts())
 print("Survival rate by gender:")
 for gender in df['Sex'].unique():
-    survival_rate = df  [df['Sex'] ==   gender]['Survived'].mean() * 100
+    survival_rate = df[df['Sex'] == gender]['Survived'].mean() * 100
     print(f"{gender.capitalize()}: {survival_rate:.2f}%")                   
     
