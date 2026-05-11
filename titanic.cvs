@@ -1,4 +1,6 @@
+import seaborn
 import pandas as pd
+import matplotlip.pyplot as plt
 df = pd.read_csv("titanic.csv")
 print(df.head())
 
@@ -20,4 +22,4 @@ print("Survival rate by gender:")
 for gender in df['Sex'].unique():
     survival_rate = df[df['Sex'] == gender]['Survived'].mean() * 100
     print(f"{gender.capitalize()}: {survival_rate:.2f}%")                   
-    
+sns.barplot(x="pclass",y="Survived",data=df)
